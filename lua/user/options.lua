@@ -8,6 +8,7 @@ local options = {
         completeopt = {"menu", "preview", "noselect"},
         timeoutlen = 500,
         shell = "zsh",
+        updatetime = 200,
 
         -- backup and history
         writebackup = false,

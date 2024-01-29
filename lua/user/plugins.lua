@@ -67,7 +67,13 @@ local plugins = {
         config = function()
             require("Comment").setup()
         end
-    }
+    },
+
+    -- show git diff markers
+    {
+        "airblade/vim-gitgutter",
+        lazy = false,
+    },
 }
 
 local lazy_setup = require("user.lazy_setup")
