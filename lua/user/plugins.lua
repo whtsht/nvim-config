@@ -74,6 +74,11 @@ local plugins = {
         "airblade/vim-gitgutter",
         lazy = false,
     },
+
+    -- java lsp
+    {
+        "mfussenegger/nvim-jdtls"
+    },
 }
 
 local lazy_setup = require("user.lazy_setup")
@@ -82,6 +87,7 @@ lazy_setup(plugins)
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
+lspconfig.jdtls.setup{}
 
 local cmp = require("cmp")
 cmp.setup({
