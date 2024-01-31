@@ -43,19 +43,20 @@ local fzf_keymaps = {
         { "<leader>fa", "<cmd>FzfLua args<cr>"               },
 
         -- { "<leader>gp", "<cmd>FzfLua grep<cr>"            },
-        { "<leader>gl", "<cmd>FzfLua grep_last<cr>"          },
-        { "<leader>gc", "<cmd>FzfLua grep_cword<cr>"         },
-        { "<leader>gC", "<cmd>FzfLua grep_cWORD<cr>"         },
-        { "<leader>gp", "<cmd>FzfLua grep_project<cr>"       },
+        -- { "<leader>gl", "<cmd>FzfLua grep_last<cr>"          },
+        -- { "<leader>gc", "<cmd>FzfLua grep_cword<cr>"         },
+        -- { "<leader>gC", "<cmd>FzfLua grep_cWORD<cr>"         },
+        -- { "<leader>gp", "<cmd>FzfLua grep_project<cr>"       },
 
-        { "<leader>lp", "<cmd>FzfLua live_grep<cr>"          },
-        { "<leader>lr", "<cmd>FzfLua live_grep_resume<cr>"   },
-        { "<leader>lg", "<cmd>FzfLua live_grep_glob<cr>"     },
-        { "<leader>ln", "<cmd>FzfLua live_grep_native<cr>"   },
+        { "<leader>gf", "<cmd>FzfLua git_files<cr>"            },
+        { "<leader>gs", "<cmd>FzfLua git_status<cr>"           },
+        { "<leader>gc", "<cmd>FzfLua git_commits<cr>"          },
+        { "<leader>gb", "<cmd>FzfLua git_branches<cr>"         },
+        { "<leader>gt", "<cmd>FzfLua git_tags<cr>"             },
+        { "<leader>ga", "<cmd>FzfLua git_stash<cr>"            },
     },
     x = {
         { "<leader>gv", "<cmd>FzfLua grep_visual<cr>"        },
-        { "ga"        , "<cmd>EasyAlign<cr>"                 },
     },
     i = {
         { "<c-f>p", "<cmd>FzfLua complete_path<cr>"  },
@@ -70,6 +71,9 @@ local lsp_keymaps = {
         { "[d", vim.diagnostic.goto_prev },
         { "]d", vim.diagnostic.goto_next },
         { "K" , vim.lsp.buf.hover        },
+        { "gd", vim.lsp.buf.definition },
+        { "<leader>rn", vim.lsp.buf.rename },
+        { "<leader>ca", "<cmd>FzfLua lsp_code_actions<cr>"  },
     },
 }
 
@@ -96,6 +100,12 @@ local align_keymaps = {
 
 apply_kaymaps(basic_keymaps)
 apply_kaymaps(fzf_keymaps)
-apply_kaymaps(lsp_keymaps)
 apply_kaymaps(hop_keymaps)
 apply_kaymaps(align_keymaps)
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    apply_kaymaps(lsp_keymaps)
+  end,
+})
