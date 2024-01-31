@@ -74,11 +74,6 @@ local plugins = {
         "airblade/vim-gitgutter",
         lazy = false,
     },
-
-    -- java lsp
-    {
-        "mfussenegger/nvim-jdtls"
-    },
 }
 
 local lazy_setup = require("user.lazy_setup")
