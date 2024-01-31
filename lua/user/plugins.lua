@@ -76,6 +76,7 @@ local plugins = {
     },
 }
 
+
 local lazy_setup = require("user.lazy_setup")
 lazy_setup(plugins)
 
@@ -83,28 +84,6 @@ local lspconfig = require("lspconfig")
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.jdtls.setup{}
-
-local cmp = require("cmp")
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  sources = {
-    { name = "nvim_lsp" },
-  },
-  mapping = cmp.mapping.preset.insert({
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-l>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.abort(),
-    ["<CR>"]  = cmp.mapping.confirm { select = true },
-  }),
-  experimental = {
-    ghost_text = true,
-  },
-})
 
 -- Set up lspconfig
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
