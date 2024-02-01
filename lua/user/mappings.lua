@@ -74,6 +74,7 @@ local lsp_keymaps = {
         { "gd", vim.lsp.buf.definition },
         { "<leader>rn", vim.lsp.buf.rename },
         { "<leader>ca", "<cmd>FzfLua lsp_code_actions<cr>"  },
+        { "<leader>f", function() vim.lsp.buf.format { async = true } end },
     },
 }
 
