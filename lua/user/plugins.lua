@@ -30,6 +30,12 @@ local plugins = {
         end
     },
 
+    -- general purpose language server
+    {
+        "mattn/efm-langserver",
+        lazy = false,
+    },
+
     -- fuzzy finder.
     {
         "ibhagwan/fzf-lua",
@@ -84,6 +90,27 @@ local lspconfig = require("lspconfig")
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.jdtls.setup{}
+
+require("lspconfig").efm.setup {
+    init_options = {
+        documentFormatting = true,
+        hover = true,
+    },
+    settings = {
+        rootMarkers = { ".git/" },
+        languages = {
+            lua = {
+                { formatCommand = "lua-format -i", formatStdin = true }
+            },
+            rust = {
+                { formatCommand = "rustfmt", formatStdin = true },
+            },
+            java = {
+                { formatCommand = "google-java-format --aosp -", formatStdin = true }
+            },
+        }
+    }
+}
 
 -- Set up lspconfig
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
