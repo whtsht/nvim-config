@@ -63,6 +63,11 @@ local plugins = {
     -- snippet
     { "hrsh7th/vim-vsnip" },
 
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp"
+    },
     --aligning lines
     { "Vonr/align.nvim" },
 
