@@ -96,6 +96,15 @@ lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.jdtls.setup{}
 
+vim.api.nvim_create_augroup("AutoFormatting", {})
+vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = '*.rs',
+    group = 'AutoFormatting',
+    callback = function()
+        vim.lsp.buf.format({ async = true })
+    end,
+})
+
 require("lspconfig").efm.setup {
     init_options = {
         documentFormatting = true,
