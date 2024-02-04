@@ -80,14 +80,10 @@ local lsp_keymaps = {
 
 local hop_keymaps = {
     n = {
-        { "<leader>ht", "<cmd>HopChar2<cr>"     },
-        { "<leader>hs", "<cmd>HopLineStart<cr>" },
-        { "<leader>hp", "<cmd>HopPattern<cr>"   },
+        { "<leader><leader>", "<cmd>HopChar2<cr>" },
     },
     x = {
-        { "<leader>ht", "<cmd>HopChar2<cr>"     },
-        { "<leader>hs", "<cmd>HopLineStart<cr>" },
-        { "<leader>hp", "<cmd>HopPattern<cr>"   },
+        { "<leader><leader>", "<cmd>HopChar2<cr>" },
     }
 }
 
