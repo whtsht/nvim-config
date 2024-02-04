@@ -19,6 +19,8 @@ local basic_keymaps = {
         { "<leader>n", "<cmd>noh<cr>", { silent = true } },
         { "k", "gk" },
         { "j", "gj" },
+        { "H", "g^" },
+        { "L", "g$" },
     },
     c = {
         { "<C-b>", "<left>"  },
@@ -26,6 +28,9 @@ local basic_keymaps = {
         { "<C-a>", "<home>"  },
         { "<C-e>", "<end>"   },
     },
+    i = {
+        { "jj", "<esc>" },
+    }
 }
 
 local fzf_keymaps = {
