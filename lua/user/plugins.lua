@@ -95,10 +95,11 @@ local lspconfig = require("lspconfig")
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.jdtls.setup{}
+lspconfig.gopls.setup{}
 
 vim.api.nvim_create_augroup("AutoFormatting", {})
 vim.api.nvim_create_autocmd('BufWritePost', {
-    pattern = '*.rs',
+    pattern = '*.rs,*.go,*.java',
     group = 'AutoFormatting',
     callback = function()
         vim.lsp.buf.format({ async = true })
@@ -118,6 +119,9 @@ require("lspconfig").efm.setup {
             },
             rust = {
                 { formatCommand = "rustfmt", formatStdin = true },
+            },
+            go = {
+                { formatCommand = "gofmt", formatStdin = true },
             },
             java = {
                 { formatCommand = "google-java-format --aosp -", formatStdin = true }
