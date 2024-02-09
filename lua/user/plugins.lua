@@ -85,17 +85,36 @@ local plugins = {
         "airblade/vim-gitgutter",
         lazy = false,
     },
+
+    -- idris lsp
+    {
+        "ShinKage/idris2-nvim",
+        dependencies = { "neovim/nvim-lspconfig", "MunifTanjim/nui.nvim" },
+        -- config = function()
+        --     require("idris2").setup({})
+        -- end
+    },
 }
 
 
 local lazy_setup = require("user.lazy_setup")
 lazy_setup(plugins)
 
+-- Set up lspconfig
+local lsp_servers = {
+    "pyright",
+    "rust_analyzer",
+    "jdtls",
+    "gopls",
+    "idris2_lsp"
+}
 local lspconfig = require("lspconfig")
-lspconfig.pyright.setup{}
-lspconfig.rust_analyzer.setup{}
-lspconfig.jdtls.setup{}
-lspconfig.gopls.setup{}
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+for _, server in pairs(lsp_servers) do
+   lspconfig[server].setup {
+       capabilities = capabilities
+   }
+end
 
 vim.api.nvim_create_augroup("AutoFormatting", {})
 vim.api.nvim_create_autocmd('BufWritePost', {
@@ -129,12 +148,3 @@ require("lspconfig").efm.setup {
         }
     }
 }
-
--- Set up lspconfig
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_servers = { "pyright", "rust_analyzer", "jdtls" }
-for _, server in pairs(lsp_servers) do
-    require("lspconfig")[server].setup {
-        capabilities = capabilities
-    }
-end
