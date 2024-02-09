@@ -59,14 +59,19 @@ local plugins = {
     -- completion
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
+    { 'saadparwaiz1/cmp_luasnip' },
 
     -- snippet
-    { "hrsh7th/vim-vsnip" },
-
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        config = function()
+            local loader = require("luasnip.loaders.from_vscode")
+            loader.lazy_load({ paths = {"./snippets"}})
+            loader.lazy_load()
+        end
     },
     --aligning lines
     { "Vonr/align.nvim" },
