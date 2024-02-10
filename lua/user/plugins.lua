@@ -99,6 +99,15 @@ local plugins = {
         --     require("idris2").setup({})
         -- end
     },
+
+    -- coq
+    { "whonore/Coqtail" },
+    {
+        "tomtomjhj/vscoq.nvim",
+        config = function()
+            require("vscoq").setup()
+        end
+    },
 }
 
 
