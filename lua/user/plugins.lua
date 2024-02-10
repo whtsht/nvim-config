@@ -131,11 +131,11 @@ for _, server in pairs(lsp_servers) do
 end
 
 vim.api.nvim_create_augroup("AutoFormatting", {})
-vim.api.nvim_create_autocmd('BufWritePost', {
+vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*.rs,*.go,*.java',
     group = 'AutoFormatting',
     callback = function()
-        vim.lsp.buf.format({ async = true })
+        vim.lsp.buf.format({ async = false })
     end,
 })
 
