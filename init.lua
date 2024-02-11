@@ -1,6 +1,7 @@
 require("user.options")
 require("user.plugins")
 require("user.mappings")
+require("user.lsp")
 require("user.cmp")
 require("user.efm")
 require("user.autocmd")
