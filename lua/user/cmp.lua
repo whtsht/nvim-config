@@ -23,18 +23,17 @@ cmp.setup({
             else
                 require("luasnip").jump(1)
             end
-        end, { 'i', 's' }),
+        end, { 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             else
                 require("luasnip").jump(-1)
             end
-        end, { 'i', 's' }),
+        end, { 's' }),
 
     }),
     experimental = {
         ghost_text = true,
     },
 })
-
