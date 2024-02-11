@@ -38,20 +38,9 @@ local fzf_keymaps = {
         { "<leader>ff", "<cmd>FzfLua files<cr>"              },
         { "<leader>fb", "<cmd>FzfLua buffers<cr>"            },
         { "<leader>fo", "<cmd>FzfLua oldfiles<cr>"           },
-        -- { "<leader>fql", "<cmd>FzfLua quickfix<cr>"       },
-        -- { "<leader>fqs", "<cmd>FzfLua quickfix_stack<cr>" },
-        -- { "<leader>fll", "<cmd>FzfLua loclist<cr>"        },
-        -- { "<leader>fls", "<cmd>FzfLua loclist_stack<cr>"  },
-        { "<leader>fl", "<cmd>FzfLua lines<cr>"              },
-        --{ "<leader>f", "<cmd>FzfLua lines<cr>"             },
-        { "<leader>ft", "<cmd>FzfLua tabs<cr>"               },
-        { "<leader>fa", "<cmd>FzfLua args<cr>"               },
 
-        -- { "<leader>gp", "<cmd>FzfLua grep<cr>"            },
-        -- { "<leader>gl", "<cmd>FzfLua grep_last<cr>"          },
-        -- { "<leader>gc", "<cmd>FzfLua grep_cword<cr>"         },
-        -- { "<leader>gC", "<cmd>FzfLua grep_cWORD<cr>"         },
-        -- { "<leader>gp", "<cmd>FzfLua grep_project<cr>"       },
+        { "<leader>fl", "<cmd>FzfLua lines<cr>"              },
+        { "<leader>ft", "<cmd>FzfLua tabs<cr>"               },
 
         { "<leader>gf", "<cmd>FzfLua git_files<cr>"             },
         { "<leader>gs", "<cmd>FzfLua git_status<cr>"            },
@@ -112,3 +101,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     apply_kaymaps(lsp_keymaps)
   end,
 })
+
+vim.keymap.set(
+	{ "n", "o", "x" },
+	"w",
+	"<cmd>lua require('spider').motion('w')<CR>",
+	{ desc = "Spider-w" }
+)
+vim.keymap.set(
+	{ "n", "o", "x" },
+	"e",
+	"<cmd>lua require('spider').motion('e')<CR>",
+	{ desc = "Spider-e" }
+)
+vim.keymap.set(
+	{ "n", "o", "x" },
+	"b",
+	"<cmd>lua require('spider').motion('b')<CR>",
+	{ desc = "Spider-b" }
+)

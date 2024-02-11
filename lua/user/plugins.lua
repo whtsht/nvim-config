@@ -48,7 +48,6 @@ local plugins = {
         config = function()
             require("ibl").setup()
         end
-
     },
 
     -- lsp progress messages
@@ -83,6 +82,8 @@ local plugins = {
             require("hop").setup()
         end
     },
+
+    { "chrisgrieser/nvim-spider"},
 
     -- Clipboard manager
     {
