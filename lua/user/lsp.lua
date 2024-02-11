@@ -1,6 +1,5 @@
 local lsp_servers = {
     "pyright",
-    "rust_analyzer",
     "jdtls",
     "gopls",
     "idris2_lsp"
@@ -12,3 +11,14 @@ for _, server in pairs(lsp_servers) do
        capabilities = capabilities
    }
 end
+    
+lspconfig.rust_analyzer.setup {
+    settings = {
+        ['rust-analyzer'] = {
+            checkOnSave = {
+                command = "clippy",
+            },
+        },
+    },
+    capabilities = capabilities,
+}
