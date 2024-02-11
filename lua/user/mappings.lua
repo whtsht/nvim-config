@@ -17,6 +17,7 @@ local basic_keymaps = {
         { "<leader>w", "<cmd>w<cr>" },
         { "<leader>q", "<cmd>q<cr>" },
         { "<leader>n", "<cmd>noh<cr>", { silent = true } },
+
         { "k", "gk" },
         { "j", "gj" },
         { "H", "g^" },
@@ -38,9 +39,12 @@ local fzf_keymaps = {
         { "<leader>ff", "<cmd>FzfLua files<cr>"              },
         { "<leader>fb", "<cmd>FzfLua buffers<cr>"            },
         { "<leader>fo", "<cmd>FzfLua oldfiles<cr>"           },
+        { "<leader>fq", "<cmd>FzfLua quickfix_stack<cr>"     },
 
         { "<leader>fl", "<cmd>FzfLua lines<cr>"              },
         { "<leader>ft", "<cmd>FzfLua tabs<cr>"               },
+
+        { "<leader>gp", "<cmd>FzfLua grep_project<cr>"       },
 
         { "<leader>gf", "<cmd>FzfLua git_files<cr>"             },
         { "<leader>gs", "<cmd>FzfLua git_status<cr>"            },
@@ -50,7 +54,7 @@ local fzf_keymaps = {
         { "<leader>ga", "<cmd>FzfLua git_stash<cr>"             },
         { "<leader>cc", function() require('neoclip.fzf')() end },
     },
-    x = {
+    x = { 
         { "<leader>gv", "<cmd>FzfLua grep_visual<cr>"        },
     },
     i = {

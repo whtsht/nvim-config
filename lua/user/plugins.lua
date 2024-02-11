@@ -139,6 +139,11 @@ local plugins = {
         end
     },
 
+    -- better quickfix window
+    {
+        "kevinhwang91/nvim-bqf",
+    },
+
     -- show git diff markers
     {
         "airblade/vim-gitgutter",
