@@ -40,6 +40,17 @@ local plugins = {
         end
     },
 
+    -- indent guide
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        lazy = false,
+        config = function()
+            require("ibl").setup()
+        end
+
+    },
+
     -- lsp progress messages
     {
         "j-hui/fidget.nvim",
