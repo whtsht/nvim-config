@@ -10,21 +10,35 @@ require("lspconfig").efm.setup {
     settings = {
         rootMarkers = { ".git/" },
         languages = {
-            markdown = { {
-                lintCommand = "npx textlint --format unix ${INPUT}",
-                lintFormats = { '%f:%l:%n: %m' },
-            } },
+            markdown = {
+                {
+                    lintCommand = "npx textlint --format unix ${INPUT}",
+                    lintFormats = { '%f:%l:%n: %m' },
+                }
+            },
             lua = {
-                { formatCommand = "lua-format -i", formatStdin = true }
+                {
+                    formatCommand = "lua-format -i",
+                    formatStdin = true
+                }
             },
             rust = {
-                { formatCommand = "rustfmt", formatStdin = true },
+                {
+                    formatCommand = "rustfmt",
+                    formatStdin = true
+                },
             },
             go = {
-                { formatCommand = "gofmt", formatStdin = true },
+                {
+                    formatCommand = "gofmt",
+                    formatStdin = true
+                },
             },
             java = {
-                { formatCommand = "google-java-format --aosp -", formatStdin = true }
+                {
+                    formatCommand = "google-java-format --aosp -",
+                    formatStdin = true
+                }
             },
         }
     }
