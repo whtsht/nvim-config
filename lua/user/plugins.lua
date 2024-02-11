@@ -96,7 +96,7 @@ local plugins = {
         end,
     },
 
-    -- lsp
+    -- language server
     { "neovim/nvim-lspconfig" },
 
     -- completion
@@ -116,8 +116,18 @@ local plugins = {
             loader.lazy_load()
         end
     },
-    --aligning lines
+
+    -- aligning lines
     { "Vonr/align.nvim" },
+
+    -- auto pairs
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config =  function()
+            require("nvim-autopairs").setup()
+        end
+    },
 
     -- commenting
     {
