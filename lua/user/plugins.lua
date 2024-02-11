@@ -83,6 +83,7 @@ local plugins = {
         end
     },
 
+    -- move by subwords
     { "chrisgrieser/nvim-spider"},
 
     -- Clipboard manager
@@ -182,27 +183,3 @@ for _, server in pairs(lsp_servers) do
        capabilities = capabilities
    }
 end
-
-require("lspconfig").efm.setup {
-    init_options = {
-        documentFormatting = true,
-        hover = true,
-    },
-    settings = {
-        rootMarkers = { ".git/" },
-        languages = {
-            lua = {
-                { formatCommand = "lua-format -i", formatStdin = true }
-            },
-            rust = {
-                { formatCommand = "rustfmt", formatStdin = true },
-            },
-            go = {
-                { formatCommand = "gofmt", formatStdin = true },
-            },
-            java = {
-                { formatCommand = "google-java-format --aosp -", formatStdin = true }
-            },
-        }
-    }
-}
