@@ -73,6 +73,17 @@ local plugins = {
         end
     },
 
+    -- Clipboard manager
+    {
+        "AckslD/nvim-neoclip.lua",
+        dependencies = {
+            {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+            require('neoclip').setup()
+        end,
+    },
+
     -- lsp
     { "neovim/nvim-lspconfig" },
 
