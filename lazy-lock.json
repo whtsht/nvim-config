@@ -5,6 +5,8 @@
   "align.nvim": { "branch": "master", "commit": "6840ba092b7994d1e8330c98d4b838b1f490cf39" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "ddc.vim": { "branch": "main", "commit": "e5daae126a42e6c736af9743fbb69263d117f328" },
+  "denops.vim": { "branch": "main", "commit": "ebda886f724fa2eb8aaa51d569903d5c359f0887" },
   "efm-langserver": { "branch": "master", "commit": "7087f8beea875ec39b89a82efbced8864020c279" },
   "fidget.nvim": { "branch": "main", "commit": "ad8873c16faa123fe3f9fd6539c41dfb0f97a9e9" },
   "friendly-snippets": { "branch": "main", "commit": "5cc1f45c6aac699ad008fb85f6ae03236062667d" },
@@ -24,6 +26,7 @@
   "nvim-spider": { "branch": "main", "commit": "dc371a116041c49ae6d3813f6e1722c2dcdabdcf" },
   "nvim-treesitter": { "branch": "master", "commit": "10d79b5dbbdffc3edf307b189284fb62e2e79a3e" },
   "nvim-web-devicons": { "branch": "master", "commit": "7f30f2da3c3641841ceb0e2c150281f624445e8f" },
+  "skkeleton": { "branch": "main", "commit": "b9fe24dce395cb7b7696fa23f0546d3d870365a3" },
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "vim-gitgutter": { "branch": "main", "commit": "67ef116100b40f9ca128196504a2e0bc0a2753b0" },
   "vscoq.nvim": { "branch": "main", "commit": "0691ba702e57826ba9e44d1016c59d3b8a4f8d51" }

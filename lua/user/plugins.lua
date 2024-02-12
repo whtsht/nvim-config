@@ -175,6 +175,16 @@ local plugins = {
         end,
         ft = { "markdown" },
     },
+
+    -- skk
+    {
+        "vim-skk/skkeleton",
+        dependencies = { 'vim-denops/denops.vim' },
+        config = function()
+            vim.fn["skkeleton#initialize"]()
+            vim.fn["skkeleton#config"]({ globalDictionaries = {"/usr/share/skk/SKK-JISYO.L"} })
+        end
+    },
 }
 
 local lazy_setup = require("user.lazy_setup")
