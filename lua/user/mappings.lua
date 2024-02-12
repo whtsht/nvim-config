@@ -58,12 +58,6 @@ local fzf_keymaps = {
     x = { 
         { "<leader>gv", "<cmd>FzfLua grep_visual<cr>"        },
     },
-    i = {
-        { "<c-f>p", "<cmd>FzfLua complete_path<cr>"  },
-        { "<c-f>f", "<cmd>FzfLua complete_file<cr>"  },
-        { "<c-f>l", "<cmd>FzfLua complete_line<cr>"  },
-        { "<c-f>b", "<cmd>FzfLua complete_bline<cr>" },
-    }
 }
 
 local lsp_keymaps = {

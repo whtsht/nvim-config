@@ -31,8 +31,8 @@ local plugins = {
 
     -- status line
     {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         lazy = false,
         priority = 1000,
         config = function()
@@ -90,10 +90,10 @@ local plugins = {
     {
         "AckslD/nvim-neoclip.lua",
         dependencies = {
-            {'ibhagwan/fzf-lua'},
+            {"ibhagwan/fzf-lua"},
         },
         config = function()
-            require('neoclip').setup()
+            require("neoclip").setup()
         end,
     },
 
@@ -103,7 +103,8 @@ local plugins = {
     -- completion
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
-    { 'saadparwaiz1/cmp_luasnip' },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "hrsh7th/cmp-path" },
 
     -- snippet
     {
@@ -132,7 +133,7 @@ local plugins = {
 
     -- commenting
     {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         lazy = false,
         config = function()
             require("Comment").setup()
@@ -179,7 +180,7 @@ local plugins = {
     -- skk
     {
         "vim-skk/skkeleton",
-        dependencies = { 'vim-denops/denops.vim' },
+        dependencies = { "vim-denops/denops.vim" },
         config = function()
             vim.fn["skkeleton#initialize"]()
             vim.fn["skkeleton#config"]({ globalDictionaries = {"/usr/share/skk/SKK-JISYO.L"} })
