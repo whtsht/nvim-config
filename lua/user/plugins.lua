@@ -100,9 +100,11 @@ local plugins = {
     -- language server
     { "neovim/nvim-lspconfig" },
 
-    -- completion
+    -- completion engine
     { "hrsh7th/nvim-cmp" },
+    -- completion sources
     { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
     { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-path" },
 
