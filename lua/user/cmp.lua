@@ -9,7 +9,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "path" },
-	}, {
+		{ name = "spell" },
 		{ name = "buffer" },
 	}),
 	mapping = cmp.mapping.preset.insert({
