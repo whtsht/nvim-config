@@ -83,9 +83,6 @@ local plugins = {
 		end,
 	},
 
-	-- move by subwords
-	{ "chrisgrieser/nvim-spider" },
-
 	-- Clipboard manager
 	{
 		"AckslD/nvim-neoclip.lua",
