@@ -17,7 +17,7 @@ local plugins = {
 				ensure_installed = "all",
 				highlight = {
 					enable = true,
-					disable = function(lang, buf)
+					disable = function(_, buf)
 						local max_filesize = 100 * 1024 -- 100 KB
 						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
 						if ok and stats and stats.size > max_filesize then
@@ -179,12 +179,8 @@ local plugins = {
 
 	-- skk
 	{
-		"vim-skk/skkeleton",
-		dependencies = { "vim-denops/denops.vim" },
-		config = function()
-			vim.fn["skkeleton#initialize"]()
-			vim.fn["skkeleton#config"]({ globalDictionaries = { "/usr/share/skk/SKK-JISYO.L" } })
-		end,
+		name = "skk",
+		dir = "~/Code/nvim/skk-learning.nvim",
 	},
 }
 
