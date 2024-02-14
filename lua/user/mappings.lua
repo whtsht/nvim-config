@@ -16,6 +16,7 @@ local basic_keymaps = {
 	n = {
 		{ "<leader>w", "<cmd>w<cr>" },
 		{ "<leader>q", "<cmd>q<cr>" },
+		{ "<leader>b", "<cmd>bd<cr>" },
 		{ "<leader>e", "<cmd>qa<cr>" },
 		{ "<leader>n", "<cmd>noh<cr>", { silent = true } },
 
@@ -31,6 +32,8 @@ local basic_keymaps = {
 		{ "<C-f>", "<right>" },
 		{ "<C-a>", "<home>" },
 		{ "<C-e>", "<end>" },
+		{ "<C-p>", "<up>" },
+		{ "<C-n>", "<down>" },
 	},
 	i = {
 		{ "jj", "<esc>" },
