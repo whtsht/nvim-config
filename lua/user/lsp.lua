@@ -22,3 +22,9 @@ lspconfig.rust_analyzer.setup({
 	},
 	capabilities = capabilities,
 })
+
+lspconfig.typos_lsp.setup({
+	init_options = {
+		config = "~/.typos.toml",
+	},
+})
