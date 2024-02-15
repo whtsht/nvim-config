@@ -9,7 +9,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "path" },
-		{ name = "spell" },
 		{ name = "buffer" },
 	}),
 	mapping = cmp.mapping.preset.insert({
@@ -18,14 +17,14 @@ cmp.setup({
 		["<C-l>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<Tab>"] = cmp.mapping(function(_)
 			if cmp.visible() then
 				cmp.select_next_item()
 			else
 				require("luasnip").jump(1)
 			end
 		end, { "s" }),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
+		["<S-Tab>"] = cmp.mapping(function(_)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			else

@@ -104,7 +104,6 @@ local plugins = {
 	{ "hrsh7th/cmp-buffer" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-path" },
-	{ "f3fora/cmp-spell" },
 
 	-- snippet
 	{
@@ -128,6 +127,15 @@ local plugins = {
 		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup()
+		end,
+	},
+
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({})
 		end,
 	},
 
