@@ -1,4 +1,4 @@
-function apply_kaymaps(keymaps)
+local function apply_kaymaps(keymaps)
 	for mode, map_opts in pairs(keymaps) do
 		for _, map_opt in ipairs(map_opts) do
 			local key, action, options = unpack(map_opt)
@@ -65,6 +65,11 @@ local fzf_keymaps = {
 				require("neoclip.fzf")()
 			end,
 		},
+
+		{ "<leader>sh", "<cmd>FzfLua search_history<cr>" },
+		{ "<leader>sh", "<cmd>FzfLua command_history<cr>" },
+		{ "<leader>mk", "<cmd>FzfLua marks<cr>" },
+		{ "<leader>mk", "<cmd>FzfLua jumps<cr>" },
 	},
 	x = {
 		{ "<leader>gv", "<cmd>FzfLua grep_visual<cr>" },
@@ -115,7 +120,7 @@ apply_kaymaps(align_keymaps)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-	callback = function(ev)
+	callback = function(_)
 		apply_kaymaps(lsp_keymaps)
 	end,
 })
