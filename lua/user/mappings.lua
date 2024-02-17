@@ -37,7 +37,7 @@ local basic_keymaps = {
 	},
 	i = {
 		{ "jj", "<esc>" },
-		-- { "<C-j>", "<Plug>(skkeleton-enable)" },
+		{ "<C-j>", "<Plug>(skkeleton-enable)" },
 	},
 }
 

@@ -185,10 +185,28 @@ local plugins = {
 		ft = { "markdown" },
 	},
 
-	-- skk
+    -- skk
 	{
-		name = "skk",
-		dir = "~/Code/nvim/skk-learning.nvim",
+		"vim-skk/skkeleton",
+		dependencies = {
+			"vim-denops/denops.vim",
+		},
+		config = function()
+			vim.fn.call("skkeleton#config", {
+				{
+					globalDictionaries = {
+						"/usr/share/skk/SKK-JISYO.L",
+					},
+				},
+			})
+		end,
+	},
+	{
+		"rinx/cmp-skkeleton",
+		dependencies = {
+			"vim-skk/skkeleton",
+			"hrsh7th/nvim-cmp",
+		},
 	},
 }
 
