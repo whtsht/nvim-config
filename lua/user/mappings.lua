@@ -39,6 +39,9 @@ local basic_keymaps = {
 		{ "jj", "<esc>" },
 		{ "<C-j>", "<Plug>(skkeleton-enable)" },
 	},
+    t = {
+        { "<C-[>", "<C-\\><C-n>" }
+    }
 }
 
 local fzf_keymaps = {

@@ -15,3 +15,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = false })
 	end,
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = "userconfig",
+	desc = "automatically disable spell check when enter term mode",
+	pattern = "*",
+	command = "setlocal nospell | startinsert",
+})
