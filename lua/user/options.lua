@@ -40,6 +40,8 @@ local options = {
 		background = "dark",
 		spell = true,
 		spelllang = "en,cjk",
+		splitbelow = true,
+		splitright = true,
 	},
 	g = {
 		mapleader = " ",
